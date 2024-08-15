@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
+import Main from "../Layout/Main";
 const Router = createBrowserRouter([
     {
       path: "/",
-      element: <div className="text-5xl text-red-500">Hello world!</div>,
+      element:<Main></Main>,
     },
   ]);
   
