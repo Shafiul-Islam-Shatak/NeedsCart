@@ -1,86 +1,35 @@
-import { useState } from "react";
-import { createContext } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import app from "../Firebase/firebase.cofig";
-import { useEffect } from "react";
-import PropTypes from 'prop-types';
-import { GoogleAuthProvider } from "firebase/auth";
-// import axios from 'axios'
+import { createContext, useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import app from '../Firebase/firebase.cofig';
 
-
-
-
-
-const googleProvider = new GoogleAuthProvider();
-export const AuthContext = createContext(null)
+export const AuthContext = createContext();
 
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-    const [loading, setLoading] = useState(true)
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
+
+    // Registration function
     const createUser = (email, password) => {
-        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
-    }
-    // login with email and pass
+    };
+
+    // Login function
     const logIn = (email, password) => {
-        setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password)
-    }
+        return signInWithEmailAndPassword(auth, email, password);
+    };
 
-    // google login
+    // Google login function
     const googleLogin = () => {
-        return signInWithPopup(auth, googleProvider)
-    }
-
-    const logOut =async () => {
-        setLoading(true);
-        await axios(`${import.meta.env.VITE_API_URL}/logout` , {
-            withCredentials: true
-        })
-        return signOut(auth);
-    }
-    // onAtuh setup
-    useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser)
-            setLoading(false)
-        });
-        return () => {
-            unSubscribe();
-        }
-    }, [])
-
-    // update profile
-    const updateUserProfile = (name, image) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: image
-        })
-
-    }
-
-    const authInfo = {
-        user,
-        createUser,
-        logOut,
-        logIn,
-        loading,
-        googleLogin,
-        updateUserProfile,
-        setUser
-    }
+        const provider = new GoogleAuthProvider();
+        return signInWithPopup(auth, provider);
+    };
 
     return (
-        <AuthContext.Provider value={authInfo}>
+        <AuthContext.Provider value={{ user, createUser, logIn, googleLogin }}>
             {children}
         </AuthContext.Provider>
     );
 };
-AuthProvider.propTypes = {
-    children: PropTypes.object.isRequired
-}
-
 
 export default AuthProvider;
