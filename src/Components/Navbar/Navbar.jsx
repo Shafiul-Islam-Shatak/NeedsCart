@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext, useRef, useState } from "react";
 import { FaEye } from "react-icons/fa";
@@ -8,8 +8,8 @@ import { AuthContext } from "../../Provider/Authprovider";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
-    const navigate = useNavigate();
-    const { user, googleLogin, logIn, createUser } = useContext(AuthContext);
+    const { register, handleSubmit } = useForm();
+    const { user, googleLogin, logIn, createUser, logOut } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const modalRef = useRef(null);
     const registerModalRef = useRef(null);
@@ -17,6 +17,7 @@ const Navbar = () => {
     // login with social media
     const handleSocialLogIn = (socialProvider) => {
         socialProvider().then((result) => {
+            handleCloseModal();
             toast.success("Log in successful!");
             if (result.user) {
                 navigate(location?.state ? location.state : '/');
@@ -39,12 +40,12 @@ const Navbar = () => {
     };
 
     // login with email and password
-    const { register, handleSubmit } = useForm();
     const onSubmitLogin = data => {
+        console.log(data);
         logIn(data.email, data.password)
             .then(result => {
+                handleCloseModal();
                 toast.success("Log in successful!");
-                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 toast.error("Login failed! Please check your email and password.");
@@ -55,6 +56,7 @@ const Navbar = () => {
     const onSubmitRegister = data => {
         createUser(data.email, data.password)
             .then(result => {
+                handleCloseRegisterModal()
                 toast.success("Registration successful!");
                 console.log(data.email, data.password);
             })
@@ -62,6 +64,17 @@ const Navbar = () => {
                 toast.error("Registration failed! Please try again.");
             });
     };
+
+// logout 
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("Log Out successful!");
+            })
+            .catch();
+    }
+
+console.log(user);
 
     const navlinks = <>
         <li><Link>Home</Link></li>
@@ -101,7 +114,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</button>
+                    {
+                        user ? <button className="btn" onClick={handleLogOut}  >LogOut</button> :
+                            <button className="btn" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</button>
+                    }
                 </div>
 
                 <div>
