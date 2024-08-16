@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import SearchBar from "../../Components/Searchbar/searchBar";
 import axios from "axios";
 import ProductsCard from "../../Components/ProductsCard/ProductsCard";
 
@@ -66,8 +65,8 @@ const Home = () => {
                 {
                     params: {
                         search,
-                        brands : selectedBrands,
-                        categories : selectedCategories,
+                        brands: selectedBrands.join(','),
+                        categories: selectedCategories.join(','),
                         minPrice: priceRange[0],
                         maxPrice: priceRange[1],
                     },
@@ -75,6 +74,7 @@ const Home = () => {
             setProducts(data)
         }
         getData()
+        
 
     }, [search, selectedBrands , selectedCategories, priceRange])
 
@@ -110,8 +110,8 @@ const Home = () => {
                         {/* Brand filter */}
                         <h2 className="font-bold mt-4">Brands</h2>
                         {
-                            brandNames.map((brand) => (
-                                <div>
+                            brandNames.map((brand , idx) => (
+                                <div key={idx}>
                                     <label className="flex items-center">
                                         <input
                                             type="checkbox"
@@ -129,8 +129,8 @@ const Home = () => {
                         {/* Category filter */}
                         <h2 className="font-bold mt-4">Category</h2>
                         {
-                            categoryNames.map((category) => (
-                                <div>
+                            categoryNames.map((category , idx) => (
+                                <div key={idx}>
                                     <label className="flex items-center">
                                         <input type="checkbox"
                                             value={category}
