@@ -12,6 +12,8 @@ const Home = () => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [priceRange, setPriceRange] = useState([0, 100]);
     const [sort, setSort] = useState([])
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
     // my all brands
     const brandNames = ["GreenEarth", "WearWell", "VisionPro", "BrewMaster", "BeautyEssentials", "PowerUp", "RelaxMax"];
@@ -68,6 +70,10 @@ const Home = () => {
     }
     console.log(sort);
 
+    // handle pagination
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
 
 
 
@@ -82,15 +88,18 @@ const Home = () => {
                         categories: selectedCategories.join(','),
                         minPrice: priceRange[0],
                         maxPrice: priceRange[1],
-                        sort
+                        sort,
+                        page: currentPage,
+                        limit: 10 
                     },
                 });
-            setProducts(data)
+            setProducts(data);
+            setTotalPages(data.totalPages);
         }
         getData()
 
 
-    }, [search, selectedBrands, selectedCategories, priceRange, sort])
+    }, [search, selectedBrands, selectedCategories, priceRange, sort, currentPage])
 
     // console.log(products);
 
@@ -287,8 +296,28 @@ const Home = () => {
                             }
                         </div> :
                         <NoData></NoData>
-                }
+                }               
+            </div>
 
+            {/* Pagination Controls */}
+            <div className="flex justify-center mt-5">
+                <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="btn btn-primary"
+                >
+                    Previous
+                </button>
+                <span className="mx-3">
+                    Page {currentPage} of {totalPages}
+                </span>
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="btn btn-primary"
+                >
+                    Next
+                </button>
             </div>
         </div>
     );
