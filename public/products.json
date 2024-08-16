@@ -24,7 +24,7 @@
         "brandName": "VisionPro",
         "productImage": "https://img.freepik.com/free-photo/television-houseplants-room-scene-generative-ai_188544-12145.jpg?t=st=1723739225~exp=1723742825~hmac=c0c0325f7da21a1786bf92c3453b2c92eb7e43c6e35caa76bbe7d44e360ecab5&w=1380",
         "description": "55-inch 4K Ultra HD Smart TV with HDR.",
-        "price": 499.99,
+        "price": 49.99,
         "category": "Electronics",
         "ratings": 4.3,
         "creationDateTime": "2024-08-15T10:25:00"
@@ -164,7 +164,7 @@
         "brandName": "GlobeTrot",
         "productImage": "https://img.freepik.com/free-photo/still-life-suitcases-with-wheels_23-2151029564.jpg?t=st=1723739849~exp=1723743449~hmac=945e5d4de0307fa747422213fdfb9492856a7f89db51bc571bd4780396d18a30&w=740",
         "description": "Durable luggage set with spinner wheels and TSA locks.",
-        "price": 199.99,
+        "price": 19.99,
         "category": "Travel",
         "ratings": 4.8,
         "creationDateTime": "2024-08-15T11:35:00"
@@ -254,7 +254,7 @@
         "brandName": "FrostMaster",
         "productImage": "https://via.placeholder.com/150",
         "description": "Countertop ice maker that produces ice in minutes.",
-        "price": 129.99,
+        "price": 99.99,
         "category": "Appliances",
         "ratings": 4.5,
         "creationDateTime": "2024-08-15T12:20:00"
@@ -364,7 +364,7 @@
         "brandName": "GardenPro",
         "productImage": "https://via.placeholder.com/150",
         "description": "Electric lawn mower with adjustable cutting height.",
-        "price": 199.99,
+        "price": 99.99,
         "category": "Garden",
         "ratings": 4.5,
         "creationDateTime": "2024-08-15T13:15:00"

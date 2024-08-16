@@ -12,7 +12,7 @@ const ProductsCard = ({ product }) => {
                         alt={productName} />
                 </figure>
                 <div className="card-body">
-                    <h2 className="text-xl font-bold">{productName}</h2>
+                    <h2 className="text-xl font-bold">{productName.length > 20 ? productName.substring(0, 20) + '...' : productName}</h2>
                     <h2 className="font-semibold">Brand : {brandName}</h2>
                     <p>{description}</p>
                     <h2 className="font-semibold">Category : {category}</h2>
