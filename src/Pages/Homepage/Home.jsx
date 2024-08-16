@@ -11,6 +11,7 @@ const Home = () => {
     const [selectedBrands, setSelectedBrands] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [priceRange, setPriceRange] = useState([0, 100]);
+    const [sort, setSort]= useState([])
 
     // my all brands
     const brandNames = ["GreenEarth", "WearWell", "VisionPro", "BrewMaster", "BeautyEssentials", "PowerUp", "RelaxMax"];
@@ -29,7 +30,7 @@ const Home = () => {
         e.preventDefault();
         setSearch(searchText)
     }
-    console.log(search);
+    // console.log(search);
 
     // Filter brand 
     const handleBrandChange = (brand) => {
@@ -61,6 +62,12 @@ const Home = () => {
 
     }
 
+    // sort handler
+    const handleSort =(e)=>{
+        setSort(e.target.value)
+    }
+    
+
 
     // display all products fethcingF
     useEffect(() => {
@@ -73,6 +80,7 @@ const Home = () => {
                         categories: selectedCategories.join(','),
                         minPrice: priceRange[0],
                         maxPrice: priceRange[1],
+                        sort
                     },
                 });
             setProducts(data)
@@ -82,7 +90,7 @@ const Home = () => {
 
     }, [search, selectedBrands, selectedCategories, priceRange])
 
-    console.log(products);
+    // console.log(products);
 
 
     return (
@@ -236,7 +244,7 @@ const Home = () => {
                         <button onClick={handleClearFilter} className="mt-3">Clear Filter</button>
                         <div className="mt-3">
                         <label className="font-bold">Sort</label>
-                        <select className="select select-bordered w-full max-w-xs">
+                        <select onChange={handleSort} className="select select-bordered w-full max-w-xs">
                             <option value="low to high">Low to high</option>
                             <option value="high to low">Hight to Low</option>
                             <option value="newest">Newest First</option>
