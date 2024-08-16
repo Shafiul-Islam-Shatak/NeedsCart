@@ -11,7 +11,7 @@ const Home = () => {
     const [selectedBrands, setSelectedBrands] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [priceRange, setPriceRange] = useState([0, 100]);
-    const [sort, setSort]= useState([])
+    const [sort, setSort] = useState([])
 
     // my all brands
     const brandNames = ["GreenEarth", "WearWell", "VisionPro", "BrewMaster", "BeautyEssentials", "PowerUp", "RelaxMax"];
@@ -55,7 +55,7 @@ const Home = () => {
     }
 
     // clear filter handeler
-    const handleClearFilter =()=>{
+    const handleClearFilter = () => {
         setPriceRange([0, 100]);
         setSelectedBrands('')
         setSelectedCategories('')
@@ -63,10 +63,12 @@ const Home = () => {
     }
 
     // sort handler
-    const handleSort =(e)=>{
+    const handleSort = (e) => {
         setSort(e.target.value)
     }
-    
+    console.log(sort);
+
+
 
 
     // display all products fethcingF
@@ -88,7 +90,7 @@ const Home = () => {
         getData()
 
 
-    }, [search, selectedBrands, selectedCategories, priceRange])
+    }, [search, selectedBrands, selectedCategories, priceRange, sort])
 
     // console.log(products);
 
@@ -114,72 +116,87 @@ const Home = () => {
                 {/* search bar end*/}
 
                 {/* Filter option on the top left corner in menu for small device */}
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <div className="flex justify-center items-center">
-                            <IoFilterOutline></IoFilterOutline>
-                            <h1 className="text-blue-800">Apply Filter</h1>
-                        </div>
-                    </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
 
-                        <form>
-                            {/* Brand filter */}
-                            <h2 className="font-bold mt-4">Brands</h2>
-                            {
-                                brandNames.map((brand, idx) => (
-                                    <div key={idx}>
-                                        <label className="flex items-center">
-                                            <input
-                                                type="checkbox"
-                                                value={brand}
-                                                checked={selectedBrands.includes(brand)}
-                                                onChange={() => handleBrandChange(brand)}
-                                                className="checkbox mt-1"
-                                            />
-                                            <span className="ml-2">{brand}</span>
-                                        </label>
-                                    </div>
-                                ))
-                            }
-
-                            {/* Category filter */}
-                            <h2 className="font-bold mt-4">Category</h2>
-                            {
-                                categoryNames.map((category, idx) => (
-                                    <div key={idx}>
-                                        <label className="flex items-center">
-                                            <input type="checkbox"
-                                                value={category}
-                                                checked={selectedCategories.includes(category)}
-                                                onChange={() => handleCategoryChange(category)}
-                                                className="checkbox mt-1"
-                                            />
-                                            <span className="ml-2">{category}</span>
-                                        </label>
-                                    </div>
-                                ))
-                            }
-
-                            {/* Price Filter */}
-                            <h2 className="font-bold mt-4">Price Range</h2>
-                            <div className="flex items-center gap-2">
-                                <span>${priceRange[0]}</span>
-                                <input
-                                    type="range"
-                                    min="0"
-                                    max="100"
-                                    value={priceRange[1]}
-                                    onChange={handlePriceChange}
-                                    className="range range-primary"
-                                />
-                                <span>${priceRange[1]}</span>
+                <div className="flex justify-around ">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <div className="flex justify-between gap-8">
+                                <div className="flex justify-center items-center">
+                                    <IoFilterOutline></IoFilterOutline>
+                                    <h1 className="text-blue-800">Apply Filter</h1>
+                                </div>
                             </div>
-                            <button onClick={handleClearFilter} className="mt-3">Clear Filter</button>
-                        </form>
-                    </ul>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+
+                            <form>
+                                {/* Brand filter */}
+                                <h2 className="font-bold mt-4">Brands</h2>
+                                {
+                                    brandNames.map((brand, idx) => (
+                                        <div key={idx}>
+                                            <label className="flex items-center">
+                                                <input
+                                                    type="checkbox"
+                                                    value={brand}
+                                                    checked={selectedBrands.includes(brand)}
+                                                    onChange={() => handleBrandChange(brand)}
+                                                    className="checkbox mt-1"
+                                                />
+                                                <span className="ml-2">{brand}</span>
+                                            </label>
+                                        </div>
+                                    ))
+                                }
+
+                                {/* Category filter */}
+                                <h2 className="font-bold mt-4">Category</h2>
+                                {
+                                    categoryNames.map((category, idx) => (
+                                        <div key={idx}>
+                                            <label className="flex items-center">
+                                                <input type="checkbox"
+                                                    value={category}
+                                                    checked={selectedCategories.includes(category)}
+                                                    onChange={() => handleCategoryChange(category)}
+                                                    className="checkbox mt-1"
+                                                />
+                                                <span className="ml-2">{category}</span>
+                                            </label>
+                                        </div>
+                                    ))
+                                }
+
+                                {/* Price Filter */}
+                                <h2 className="font-bold mt-4">Price Range</h2>
+                                <div className="flex items-center gap-2">
+                                    <span>${priceRange[0]}</span>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value={priceRange[1]}
+                                        onChange={handlePriceChange}
+                                        className="range range-primary"
+                                    />
+                                    <span>${priceRange[1]}</span>
+                                </div>
+                                <button onClick={handleClearFilter} className="mt-3">Clear Filter</button>
+                            </form>
+                        </ul>
+                    </div>
+                    {/* sorting div for mobile */}
+                    <div className="flex justify-center items-center gap-3">
+                        {/* sorting  */}
+                        <label className="font-bold">Sort</label>
+                        <select onChange={handleSort} className="select select-bordered w-full max-w-xs">
+                            <option value="low to high">Low to high</option>
+                            <option value="high to low">Hight to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
                 </div>
 
             </div>
@@ -243,12 +260,14 @@ const Home = () => {
 
                         <button onClick={handleClearFilter} className="mt-3">Clear Filter</button>
                         <div className="mt-3">
-                        <label className="font-bold">Sort</label>
-                        <select onChange={handleSort} className="select select-bordered w-full max-w-xs">
-                            <option value="low to high">Low to high</option>
-                            <option value="high to low">Hight to Low</option>
-                            <option value="newest">Newest First</option>
-                        </select>
+
+                            {/* sorting  */}
+                            <label className="font-bold">Sort</label>
+                            <select onChange={handleSort} className="select select-bordered w-full max-w-xs">
+                                <option value="low to high">Low to high</option>
+                                <option value="high to low">Hight to Low</option>
+                                <option value="newest">Newest First</option>
+                            </select>
                         </div>
                     </form>
                 </div>
