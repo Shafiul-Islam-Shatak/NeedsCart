@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductsCard from "../../Components/ProductsCard/ProductsCard";
 import NoData from "../../Components/NoData/NoData";
-import { data } from "autoprefixer";
+import { IoFilterOutline } from "react-icons/io5";
 
 const Home = () => {
     const [search, setSearch] = useState('');
@@ -39,8 +39,6 @@ const Home = () => {
                 : [...prev, brand]
         );
     }
-    console.log(selectedBrands);
-
 
     // Filter category
     const handleCategoryChange = (category) => {
@@ -49,15 +47,19 @@ const Home = () => {
                 prev.filter((item) => item !== category) : [...prev, category]
         )
     }
-    console.log(selectedCategories);
 
     // price range handler
     const handlePriceChange = (e) => {
         setPriceRange([0, e.target.value])
     }
-    console.log(priceRange);
 
+    // clear filter handeler
+    const handleClearFilter =()=>{
+        setPriceRange([0, 100]);
+        setSelectedBrands('')
+        setSelectedCategories('')
 
+    }
 
 
     // display all products fethcingF
@@ -90,23 +92,93 @@ const Home = () => {
                 <div data-aos="fade-up flex">
                     <form onSubmit={handleSearch} className="mb-10 mx-auto ">
                         <div className="flex justify-center items-center">
-                            <label className="input  input-bordered w-90 md:w-96 flex items-center gap-2">
+                            <label className="input  input-bordered w-72 flex items-center gap-2">
                                 <input type="text" className="grow" name="search" placeholder="Search"
                                     onChange={(e) => setSearchText(e.target.value)}
                                     value={searchText} />
 
                                 <button type="submit" className="btn border-none bg-orange-400 -mr-4 text-black ">Search</button>
                             </label>
-                            <button onClick={handleClearSearch} className="btn border-none bg-orange-400 -mr-4 text-black ml-5 ">Clear Search</button>
+                            <button onClick={handleClearSearch} className="btn border-none bg-orange-400 p-2 text-black ml-5">Clear Search</button>
                         </div>
                     </form>
                 </div>
                 {/* search bar end*/}
+
+                {/* Filter option on the top left corner in menu for small device */}
+                <div className="dropdown">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div className="flex justify-center items-center">
+                            <IoFilterOutline></IoFilterOutline>
+                            <h1 className="text-blue-800">Apply Filter</h1>
+                        </div>
+                    </div>
+                    <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+
+                        <form>
+                            {/* Brand filter */}
+                            <h2 className="font-bold mt-4">Brands</h2>
+                            {
+                                brandNames.map((brand, idx) => (
+                                    <div key={idx}>
+                                        <label className="flex items-center">
+                                            <input
+                                                type="checkbox"
+                                                value={brand}
+                                                checked={selectedBrands.includes(brand)}
+                                                onChange={() => handleBrandChange(brand)}
+                                                className="checkbox mt-1"
+                                            />
+                                            <span className="ml-2">{brand}</span>
+                                        </label>
+                                    </div>
+                                ))
+                            }
+
+                            {/* Category filter */}
+                            <h2 className="font-bold mt-4">Category</h2>
+                            {
+                                categoryNames.map((category, idx) => (
+                                    <div key={idx}>
+                                        <label className="flex items-center">
+                                            <input type="checkbox"
+                                                value={category}
+                                                checked={selectedCategories.includes(category)}
+                                                onChange={() => handleCategoryChange(category)}
+                                                className="checkbox mt-1"
+                                            />
+                                            <span className="ml-2">{category}</span>
+                                        </label>
+                                    </div>
+                                ))
+                            }
+
+                            {/* Price Filter */}
+                            <h2 className="font-bold mt-4">Price Range</h2>
+                            <div className="flex items-center gap-2">
+                                <span>${priceRange[0]}</span>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value={priceRange[1]}
+                                    onChange={handlePriceChange}
+                                    className="range range-primary"
+                                />
+                                <span>${priceRange[1]}</span>
+                            </div>
+                            <button onClick={handleClearFilter} className="mt-3">Clear Filter</button>
+                        </form>
+                    </ul>
+                </div>
+
             </div>
 
             <div className="flex gap-5 p-5">
-                {/* Filter option on the left side */}
-                <div className=" flex-1 hidden lg:block">
+                {/* Filter option on the left side for large device */}
+                <div className=" flex-1 hidden  md:block">
                     <h1 className="font-bold">Filter Your Products</h1>
                     <form>
                         {/* Brand filter */}
@@ -160,8 +232,12 @@ const Home = () => {
                             />
                             <span>${priceRange[1]}</span>
                         </div>
+
+                        <button onClick={handleClearFilter} className="mt-3">Clear Filter</button>
                     </form>
                 </div>
+
+
                 {/* main display products */}
 
                 {
