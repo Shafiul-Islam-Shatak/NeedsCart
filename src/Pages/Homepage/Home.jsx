@@ -39,7 +39,7 @@ const Home = () => {
         );
     }
     console.log(selectedBrands);
-    
+
 
     // Filter category
     const handleCategoryChange = (category) => {
@@ -51,23 +51,32 @@ const Home = () => {
     console.log(selectedCategories);
 
     // price range handler
-    const handlePriceChange =(e)=>{
+    const handlePriceChange = (e) => {
         setPriceRange([0, e.target.value])
     }
     console.log(priceRange);
-    
-    
+
+
 
 
     // display all products fethcingF
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`${import.meta.env.VITE_API_URL}/all-products?search=${search}`)
+            const { data } = await axios(`${import.meta.env.VITE_API_URL}/all-products`,
+                {
+                    params: {
+                        search,
+                        brands : selectedBrands,
+                        categories : selectedCategories,
+                        minPrice: priceRange[0],
+                        maxPrice: priceRange[1],
+                    },
+                });
             setProducts(data)
         }
         getData()
 
-    }, [search])
+    }, [search, selectedBrands , selectedCategories, priceRange])
 
     console.log(products);
 
