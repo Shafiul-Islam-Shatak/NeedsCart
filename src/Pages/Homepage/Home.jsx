@@ -16,10 +16,10 @@ const Home = () => {
     const [totalPages, setTotalPages] = useState(1);
 
     // my all brands
-    const brandNames = ["GreenEarth", "WearWell", "VisionPro", "BrewMaster", "BeautyEssentials", "PowerUp", "RelaxMax"];
+    const brandNames = ["TechMaster", "SoundWave", "Visionary", "GardenPro", "WellnessHub", "HandyTools", "SportsGear"];
 
     // my all category 
-    const categoryNames = ["Household", "Apparel", "Electronics", "Beauty", "Accessories", "Wellness", "Tech", "Fitness"];
+    const categoryNames = ["electronics", "gadget", "Wellness", "Garden", "Sports", "Tools"];
 
     // clear text from search box
     const handleClearSearch = () => {
