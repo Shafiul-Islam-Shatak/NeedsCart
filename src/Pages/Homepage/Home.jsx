@@ -31,6 +31,7 @@ const Home = () => {
     const handleSearch = e => {
         e.preventDefault();
         setSearch(searchText)
+        setCurrentPage(1);
     }
     // console.log(search);
 
@@ -41,6 +42,7 @@ const Home = () => {
                 ? prev.filter((item) => item !== brand)
                 : [...prev, brand]
         );
+        setCurrentPage(1);
     }
 
     // Filter category
@@ -49,11 +51,13 @@ const Home = () => {
             prev.includes(category) ?
                 prev.filter((item) => item !== category) : [...prev, category]
         )
+        setCurrentPage(1);
     }
 
     // price range handler
     const handlePriceChange = (e) => {
         setPriceRange([0, e.target.value])
+        setCurrentPage(1);
     }
 
     // clear filter handeler
@@ -61,12 +65,14 @@ const Home = () => {
         setPriceRange([0, 100]);
         setSelectedBrands('')
         setSelectedCategories('')
+        setCurrentPage(1);
 
     }
 
     // sort handler
     const handleSort = (e) => {
         setSort(e.target.value)
+        setCurrentPage(1);
     }
     console.log(sort);
 
@@ -93,7 +99,7 @@ const Home = () => {
                         limit: 10 
                     },
                 });
-            setProducts(data);
+            setProducts(data.products);
             setTotalPages(data.totalPages);
         }
         getData()
