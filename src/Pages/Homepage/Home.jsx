@@ -234,6 +234,14 @@ const Home = () => {
                         </div>
 
                         <button onClick={handleClearFilter} className="mt-3">Clear Filter</button>
+                        <div className="mt-3">
+                        <label className="font-bold">Sort</label>
+                        <select className="select select-bordered w-full max-w-xs">
+                            <option value="low to high">Low to high</option>
+                            <option value="high to low">Hight to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                        </div>
                     </form>
                 </div>
 
