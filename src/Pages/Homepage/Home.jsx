@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductsCard from "../../Components/ProductsCard/ProductsCard";
+import NoData from "../../Components/NoData/NoData";
+import { data } from "autoprefixer";
 
 const Home = () => {
     const [search, setSearch] = useState('');
@@ -74,9 +76,9 @@ const Home = () => {
             setProducts(data)
         }
         getData()
-        
 
-    }, [search, selectedBrands , selectedCategories, priceRange])
+
+    }, [search, selectedBrands, selectedCategories, priceRange])
 
     console.log(products);
 
@@ -110,7 +112,7 @@ const Home = () => {
                         {/* Brand filter */}
                         <h2 className="font-bold mt-4">Brands</h2>
                         {
-                            brandNames.map((brand , idx) => (
+                            brandNames.map((brand, idx) => (
                                 <div key={idx}>
                                     <label className="flex items-center">
                                         <input
@@ -129,7 +131,7 @@ const Home = () => {
                         {/* Category filter */}
                         <h2 className="font-bold mt-4">Category</h2>
                         {
-                            categoryNames.map((category , idx) => (
+                            categoryNames.map((category, idx) => (
                                 <div key={idx}>
                                     <label className="flex items-center">
                                         <input type="checkbox"
@@ -161,15 +163,21 @@ const Home = () => {
                     </form>
                 </div>
                 {/* main display products */}
-                <div className=" w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                    {
-                        products.map(product =>
-                            <ProductsCard
-                                key={product._id}
-                                product={product}
-                            ></ProductsCard>)
-                    }
-                </div>
+
+                {
+                    products.length > 0 ?
+                        <div className=" w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                            {
+                                products.map(product =>
+                                    <ProductsCard
+                                        key={product._id}
+                                        product={product}
+                                    ></ProductsCard>)
+                            }
+                        </div> :
+                        <NoData></NoData>
+                }
+
             </div>
         </div>
     );
