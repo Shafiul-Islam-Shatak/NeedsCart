@@ -1,0 +1,402 @@
+[
+    {
+        "productName": "EcoClean Dish Soap",
+        "brandName": "GreenEarth",
+        "productImage": "https://img.freepik.com/free-vector/realistic-cleaning-products-ad_52683-38125.jpg?t=st=1723739023~exp=1723742623~hmac=f0b8ee04142cc4420b05ffe885da5c59c50be1af4885694342b89b8e866d6f4e&w=1380",
+        "description": "Biodegradable dish soap with a fresh citrus scent.",
+        "price": 4.99,
+        "category": "Household",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T10:15:00"
+    },
+    {
+        "productName": "ComfortSoft T-Shirt",
+        "brandName": "WearWell",
+        "productImage": "https://img.freepik.com/free-photo/men-green-shirt-nature-inspired-design-fresh-modern-summer-fashion-generated-by-artificial-intelligence_188544-130341.jpg?t=st=1723739242~exp=1723742842~hmac=5e09725952a02c68def5ca92e2c4521be92aafcc27573c4a48cb881799638839&w=1380",
+        "description": "100% cotton t-shirt available in various colors.",
+        "price": 14.99,
+        "category": "Apparel",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T10:20:00"
+    },
+    {
+        "productName": "UltraHD 4K TV",
+        "brandName": "VisionPro",
+        "productImage": "https://img.freepik.com/free-photo/television-houseplants-room-scene-generative-ai_188544-12145.jpg?t=st=1723739225~exp=1723742825~hmac=c0c0325f7da21a1786bf92c3453b2c92eb7e43c6e35caa76bbe7d44e360ecab5&w=1380",
+        "description": "55-inch 4K Ultra HD Smart TV with HDR.",
+        "price": 499.99,
+        "category": "Electronics",
+        "ratings": 4.3,
+        "creationDateTime": "2024-08-15T10:25:00"
+    },
+    {
+        "productName": "PureBrew Coffee Maker",
+        "brandName": "BrewMaster",
+        "productImage": "https://img.freepik.com/free-photo/delicious-iced-coffee-beans-assortment_23-2149600671.jpg?t=st=1723739332~exp=1723742932~hmac=e86c148f15aec8d2c1e2aadd83bdae4f753f4c8bf46a666dda4ce91229e171c8&w=1380",
+        "description": "Automatic coffee maker with programmable settings.",
+        "price": 79.99,
+        "category": "Kitchen",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T10:30:00"
+    },
+    {
+        "productName": "FitTrack Smart Scale",
+        "brandName": "HealthTech",
+        "productImage": "https://m.media-amazon.com/images/I/61S4kYNKEXL._SL1500_.jpg",
+        "description": "Bluetooth-enabled smart scale that tracks weight and BMI.",
+        "price": 29.99,
+        "category": "Health",
+        "ratings": 4.4,
+        "creationDateTime": "2024-08-15T10:35:00"
+    },
+    {
+        "productName": "LuxeBlend Shampoo",
+        "brandName": "BeautyEssentials",
+        "productImage": "https://img.freepik.com/free-vector/luxury-cosmetic-products-design_1284-35951.jpg?t=st=1723739474~exp=1723743074~hmac=dc59e362de3701df0e15168a1ac0af1b08a2cb5bc0327f306b25d386998736ec&w=826",
+        "description": "Nourishing shampoo for all hair types with argan oil.",
+        "price": 8.99,
+        "category": "Beauty",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T10:40:00"
+    },
+    {
+        "productName": "QuickCharge Power Bank",
+        "brandName": "PowerUp",
+        "productImage": "https://img.freepik.com/free-vector/gradient-hard-drive-illustration_23-2149369148.jpg?t=st=1723739541~exp=1723743141~hmac=5e9963cb72e950c5c5a9872284c4da6b85faffbf130559a6a7737f1844fdd0d3&w=826",
+        "description": "Portable power bank with fast charging capabilities.",
+        "price": 24.99,
+        "category": "Accessories",
+        "ratings": 4.2,
+        "creationDateTime": "2024-08-15T10:45:00"
+    },
+    {
+        "productName": "SoothePro Massage Gun",
+        "brandName": "RelaxMax",
+        "productImage": "https://img.freepik.com/free-photo/person-using-massage-gun_23-2149398547.jpg?t=st=1723739565~exp=1723743165~hmac=b6ae89e367610046357e434a4900ae2ec8e888bb8dfc758df9787887877f8df7&w=1380",
+        "description": "Deep tissue massage gun with multiple attachments.",
+        "price": 99.99,
+        "category": "Wellness",
+        "ratings": 4.8,
+        "creationDateTime": "2024-08-15T10:50:00"
+    },
+    {
+        "productName": "TechGuard Laptop Sleeve",
+        "brandName": "UrbanGear",
+        "productImage": "https://img.freepik.com/free-photo/diary-pencil-tablet_1156-56.jpg?t=st=1723739597~exp=1723743197~hmac=9a6ffbf501826f44fd1189a3b3d282633efb6e955b5a7e946800e2c3c5d58000&w=1380",
+        "description": "Water-resistant laptop sleeve with padded protection.",
+        "price": 19.99,
+        "category": "Tech",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T10:55:00"
+    },
+    {
+        "productName": "AquaFit Water Bottle",
+        "brandName": "HydroLife",
+        "productImage": "https://img.freepik.com/free-photo/bottle-water-plank-park_53876-94725.jpg?t=st=1723739619~exp=1723743219~hmac=6dc9e50217754c664ff6a3eec8e4279e605170a48a1f8efe683dda26764024ac&w=1380",
+        "description": "32oz BPA-free water bottle with time markers.",
+        "price": 12.99,
+        "category": "Fitness",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T11:00:00"
+    },
+    {
+        "productName": "GlowSkin Face Cream",
+        "brandName": "Radiance",
+        "productImage": "https://img.freepik.com/free-photo/moisturizer-product-beauty-care-with-pink-tones_23-2151005536.jpg?t=st=1723739641~exp=1723743241~hmac=b571e36df53f857066f918913f33e0736100a6c227ddbcf67d830c303a8988f6&w=1380",
+        "description": "Hydrating face cream with SPF 30 protection.",
+        "price": 18.99,
+        "category": "Beauty",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T11:05:00"
+    },
+    {
+        "productName": "SleepSound White Noise Machine",
+        "brandName": "Dreamy",
+        "productImage": "https://img.freepik.com/free-photo/view-horizontal-bluetooth-speaker-with-simple-minimal-modern-design_23-2150807997.jpg?t=st=1723739666~exp=1723743266~hmac=56c5f2b1dbf0b8615d02d91a018584d116661a47c04ecb331fe0d78e1bc0e62c&w=1380",
+        "description": "Portable white noise machine with multiple sound settings.",
+        "price": 29.99,
+        "category": "Home",
+        "ratings": 4.4,
+        "creationDateTime": "2024-08-15T11:10:00"
+    },
+    {
+        "productName": "SnapGrip Tripod",
+        "brandName": "PhotoPro",
+        "productImage": "https://img.freepik.com/free-vector/smartphone-tripod_24877-81675.jpg?t=st=1723739708~exp=1723743308~hmac=25babb444e413dcbf805fa47aab18cb132cb4d169f1397ed4f6fab3809cf5303&w=826",
+        "description": "Flexible tripod with a secure grip for smartphones.",
+        "price": 16.99,
+        "category": "Photography",
+        "ratings": 4.3,
+        "creationDateTime": "2024-08-15T11:15:00"
+    },
+    {
+        "productName": "PowerBoost Blender",
+        "brandName": "BlendMate",
+        "productImage": "https://img.freepik.com/free-photo/juice-recipe-with-ingredints_23-2149257500.jpg?t=st=1723739738~exp=1723743338~hmac=35cef391a37505f1d5b9b01f8b0ed923f54d10cc5ab0a90d4b5957fb4cb3e72a&w=1380",
+        "description": "High-speed blender with multiple blending modes.",
+        "price": 59.99,
+        "category": "Kitchen",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T11:20:00"
+    },
+    {
+        "productName": "CozyWool Blanket",
+        "brandName": "WarmNest",
+        "productImage": "https://img.freepik.com/free-photo/still-life-cozy-home-interior-details-living-room_169016-3294.jpg?t=st=1723739791~exp=1723743391~hmac=b0488447fda05fda229123391a03403b06309ddbd9e9dc8cd2651792f03844f7&w=1380",
+        "description": "Soft wool blanket perfect for chilly nights.",
+        "price": 49.99,
+        "category": "Home",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T11:25:00"
+    },
+    {
+        "productName": "FlexiGrip Yoga Mat",
+        "brandName": "ZenFit",
+        "productImage": "https://img.freepik.com/free-photo/still-life-yoga-equipment_23-2151725313.jpg?t=st=1723739817~exp=1723743417~hmac=4a6c16c52a3022a31983f6d20cbe25fc70b5e53c00ea3746f1a8c777e1a8425d&w=740",
+        "description": "Non-slip yoga mat with cushioned support.",
+        "price": 24.99,
+        "category": "Fitness",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T11:30:00"
+    },
+    {
+        "productName": "TravelMate Luggage Set",
+        "brandName": "GlobeTrot",
+        "productImage": "https://img.freepik.com/free-photo/still-life-suitcases-with-wheels_23-2151029564.jpg?t=st=1723739849~exp=1723743449~hmac=945e5d4de0307fa747422213fdfb9492856a7f89db51bc571bd4780396d18a30&w=740",
+        "description": "Durable luggage set with spinner wheels and TSA locks.",
+        "price": 199.99,
+        "category": "Travel",
+        "ratings": 4.8,
+        "creationDateTime": "2024-08-15T11:35:00"
+    },
+    {
+        "productName": "SonicClean Electric Toothbrush",
+        "brandName": "OralCare",
+        "productImage": "https://img.freepik.com/free-vector/hygiene-decorative-icons-set-electric-toothbrush-toothpaste-tube-white-background-realistic-style-isolated_1284-20370.jpg?t=st=1723739890~exp=1723743490~hmac=5d81e80c46733c8b19931f98e3b5b311300f356c611357155244d6be2f757016&w=740",
+        "description": "Rechargeable electric toothbrush with multiple brushing modes.",
+        "price": 39.99,
+        "category": "Health",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T11:40:00"
+    },
+    {
+        "productName": "TasteMaster Chef's Knife",
+        "brandName": "SlicePro",
+        "productImage": "https://img.freepik.com/free-psd/3d-render-isolated-cleaver-compositing_314999-1901.jpg?t=st=1723739923~exp=1723743523~hmac=77d90fd01ae293d8aeec864bccb74a413412be6e192fb38aa99a69960efb48b7&w=826",
+        "description": "Precision chef's knife with a stainless steel blade.",
+        "price": 34.99,
+        "category": "Kitchen",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T11:45:00"
+    },
+    {
+        "productName": "ActiveFit Running Shoes",
+        "brandName": "SprintWear",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Lightweight running shoes with cushioned soles.",
+        "price": 59.99,
+        "category": "Footwear",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T11:50:00"
+    },
+    {
+        "productName": "MegaSound Bluetooth Speaker",
+        "brandName": "SoundWave",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Portable Bluetooth speaker with powerful bass.",
+        "price": 49.99,
+        "category": "Electronics",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T11:55:00"
+    },
+    {
+        "productName": "SilkDream Pillowcase",
+        "brandName": "LuxurySleep",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "100% silk pillowcase that helps prevent wrinkles.",
+        "price": 29.99,
+        "category": "Home",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T12:00:00"
+    },
+    {
+        "productName": "ProGamer Mouse",
+        "brandName": "GamerTech",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "High-precision gaming mouse with customizable buttons.",
+        "price": 39.99,
+        "category": "Gaming",
+        "ratings": 4.8,
+        "creationDateTime": "2024-08-15T12:05:00"
+    },
+    {
+        "productName": "EcoFresh Reusable Grocery Bags",
+        "brandName": "EcoLiving",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Set of 5 reusable grocery bags made from recycled materials.",
+        "price": 14.99,
+        "category": "Household",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T12:10:00"
+    },
+    {
+        "productName": "SmartChef Air Fryer",
+        "brandName": "CookWell",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Healthy air fryer with a digital display and presets.",
+        "price": 99.99,
+        "category": "Kitchen",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T12:15:00"
+    },
+    {
+        "productName": "ChillZone Ice Maker",
+        "brandName": "FrostMaster",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Countertop ice maker that produces ice in minutes.",
+        "price": 129.99,
+        "category": "Appliances",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T12:20:00"
+    },
+    {
+        "productName": "EcoLuxe Bamboo Sheets",
+        "brandName": "GreenHome",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Soft bamboo sheets that are eco-friendly and hypoallergenic.",
+        "price": 79.99,
+        "category": "Home",
+        "ratings": 4.8,
+        "creationDateTime": "2024-08-15T12:25:00"
+    },
+    {
+        "productName": "ProStyle Hair Dryer",
+        "brandName": "StylePro",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Professional-grade hair dryer with ionic technology.",
+        "price": 59.99,
+        "category": "Beauty",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T12:30:00"
+    },
+    {
+        "productName": "ClearView Monitor Stand",
+        "brandName": "OfficeMax",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Ergonomic monitor stand with adjustable height.",
+        "price": 34.99,
+        "category": "Office",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T12:35:00"
+    },
+    {
+        "productName": "FlexiFold Folding Table",
+        "brandName": "CompactLiving",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Foldable table ideal for small spaces and easy storage.",
+        "price": 49.99,
+        "category": "Furniture",
+        "ratings": 4.4,
+        "creationDateTime": "2024-08-15T12:40:00"
+    },
+    {
+        "productName": "TrueSound Wireless Earbuds",
+        "brandName": "AudioZen",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Wireless earbuds with noise-cancelling technology.",
+        "price": 79.99,
+        "category": "Electronics",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T12:45:00"
+    },
+    {
+        "productName": "FitWear Yoga Pants",
+        "brandName": "ActiveLife",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Comfortable yoga pants with a high waistband.",
+        "price": 29.99,
+        "category": "Apparel",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T12:50:00"
+    },
+    {
+        "productName": "SleekDesign Pen Set",
+        "brandName": "Writer's Choice",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Luxury pen set with smooth writing ink.",
+        "price": 24.99,
+        "category": "Office",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T12:55:00"
+    },
+    {
+        "productName": "PowerMax Surge Protector",
+        "brandName": "SafeElectro",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "6-outlet surge protector with USB charging ports.",
+        "price": 19.99,
+        "category": "Accessories",
+        "ratings": 4.4,
+        "creationDateTime": "2024-08-15T13:00:00"
+    },
+    {
+        "productName": "TranquilAroma Essential Oil Diffuser",
+        "brandName": "PureEssence",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Ultrasonic essential oil diffuser with LED lights.",
+        "price": 29.99,
+        "category": "Wellness",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T13:05:00"
+    },
+    {
+        "productName": "GripMaster Tool Set",
+        "brandName": "ToolPro",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "32-piece tool set with ergonomic handles.",
+        "price": 49.99,
+        "category": "Tools",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T13:10:00"
+    },
+    {
+        "productName": "ProCut Lawn Mower",
+        "brandName": "GardenPro",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Electric lawn mower with adjustable cutting height.",
+        "price": 199.99,
+        "category": "Garden",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T13:15:00"
+    },
+    {
+        "productName": "QuickDry Bath Towels",
+        "brandName": "SoftEssentials",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Set of 4 quick-drying bath towels.",
+        "price": 39.99,
+        "category": "Home",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-15T13:20:00"
+    },
+    {
+        "productName": "GlidePro Inline Skates",
+        "brandName": "SkateTech",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Adjustable inline skates with high-speed bearings.",
+        "price": 89.99,
+        "category": "Sports",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-15T13:25:00"
+    },
+    {
+        "productName": "EcoChic Reusable Straws",
+        "brandName": "SustainableLiving",
+        "productImage": "https://via.placeholder.com/150",
+        "description": "Set of 10 stainless steel reusable straws.",
+        "price": 12.99,
+        "category": "Kitchen",
+        "ratings": 4.8,
+        "creationDateTime": "2024-08-15T13:30:00"
+    }
+]
