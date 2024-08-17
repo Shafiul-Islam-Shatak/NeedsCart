@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductsCard from "../../Components/ProductsCard/ProductsCard";
 import NoData from "../../Components/NoData/NoData";
 import { IoFilterOutline } from "react-icons/io5";
+import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
     const [search, setSearch] = useState('');
@@ -329,6 +330,8 @@ const Home = () => {
                     Next
                 </button>
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };
