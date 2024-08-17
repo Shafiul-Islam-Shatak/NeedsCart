@@ -86,7 +86,7 @@ console.log(user);
                 <div className="navbar-start">
                     
 
-                    <a className="btn btn-ghost text-xl"><img className="h-10 lg:h-16" src="https://i.ibb.co/MDnpjgg/Needs-Cart.png"></img></a>
+                    <img className="h-10 lg:h-16" src="https://i.ibb.co/MDnpjgg/Needs-Cart.png"></img>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -33,7 +33,6 @@ const Home = () => {
         setSearch(searchText)
         setCurrentPage(1);
     }
-    // console.log(search);
 
     // Filter brand 
     const handleBrandChange = (brand) => {
@@ -96,14 +95,13 @@ const Home = () => {
                         maxPrice: priceRange[1],
                         sort,
                         page: currentPage,
-                        limit: 10 
+                        limit: 10
                     },
                 });
             setProducts(data.products);
             setTotalPages(data.totalPages);
         }
         getData()
-
 
     }, [search, selectedBrands, selectedCategories, priceRange, sort, currentPage])
 
@@ -117,14 +115,20 @@ const Home = () => {
                 <div data-aos="fade-up flex">
                     <form onSubmit={handleSearch} className="mb-10 mx-auto ">
                         <div className="flex justify-center items-center">
-                            <label className="input  input-bordered w-72 flex items-center gap-2">
-                                <input type="text" className="grow" name="search" placeholder="Search"
-                                    onChange={(e) => setSearchText(e.target.value)}
-                                    value={searchText} />
+                            <div className="flex flex-col lg:flex-row">
+                                <div>
+                                    <label className="input  input-bordered w-72 flex items-center gap-2">
+                                        <input type="text" className="grow" name="search" placeholder="Search"
+                                            onChange={(e) => setSearchText(e.target.value)}
+                                            value={searchText} />
+                                    </label>
+                                </div>
+                                <div className="mt-3 lg:mt-0">
+                                    <button type="submit" className="btn border-none bg-orange-400 -mr-4 text-black ">Search</button>
+                                    <button onClick={handleClearSearch} className="btn border-none bg-orange-400 p-2 text-black ml-5">Clear Search</button> 
+                                </div>
+                            </div>
 
-                                <button type="submit" className="btn border-none bg-orange-400 -mr-4 text-black ">Search</button>
-                            </label>
-                            <button onClick={handleClearSearch} className="btn border-none bg-orange-400 p-2 text-black ml-5">Clear Search</button>
                         </div>
                     </form>
                 </div>
@@ -302,7 +306,7 @@ const Home = () => {
                             }
                         </div> :
                         <NoData></NoData>
-                }               
+                }
             </div>
 
             {/* Pagination Controls */}
