@@ -5,7 +5,7 @@ const ProductsCard = ({ product }) => {
 
     return (
         <div>
-            <div className="card card-compact bg-base-100 w-72 shadow-xl">
+            <div className="card card-compact bg-base-100 max-w-72 shadow-xl">
                 <figure>
                     <img className="h-52"
                         src={productImage}
@@ -17,7 +17,7 @@ const ProductsCard = ({ product }) => {
                     <p>{description}</p>
                     <h2 className="font-semibold">Category : {category}</h2>
                     <h2 className="font-semibold">Uploaded at : {creationDateTime}</h2>
-                    <div className="card-actions justify-end">
+                    <div className="card-actions justify-center ">
                         <button className="btn bg-orange-300">Rating : {ratings}</button>
                         <button className="btn bg-orange-300">Price : {price}$</button>
                     </div>

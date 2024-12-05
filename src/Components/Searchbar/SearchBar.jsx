@@ -25,7 +25,7 @@ const SearchBar = () => {
                                 onChange={(e) => setSearchText(e.target.value)}
                                 value={searchText} />
 
-                            <button type="submit" className="btn border-none bg-orange-400 -mr-4 text-black ">Search</button>
+                            <button type="submit" className="btn border-none bg-orange-400 mr-4 text-black ">Search</button>
                         </label>
                         <button onClick={handleClearSearch} className="btn border-none bg-orange-400 -mr-4 text-black ml-5 ">Clear Search</button>
                     </div>

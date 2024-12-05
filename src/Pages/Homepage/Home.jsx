@@ -3,7 +3,6 @@ import axios from "axios";
 import ProductsCard from "../../Components/ProductsCard/ProductsCard";
 import NoData from "../../Components/NoData/NoData";
 import { IoFilterOutline } from "react-icons/io5";
-import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
     const [search, setSearch] = useState('');
@@ -297,7 +296,7 @@ const Home = () => {
 
                 {
                     products.length > 0 ?
-                        <div className=" w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                        <div className="  w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5">
                             {
                                 products.map(product =>
                                     <ProductsCard
@@ -331,7 +330,6 @@ const Home = () => {
                 </button>
             </div>
 
-            <Footer></Footer>
         </div>
     );
 };
